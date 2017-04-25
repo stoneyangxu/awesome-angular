@@ -86,4 +86,19 @@ describe('LoginComponent', () => {
     expect(instance.username).toBe('new name');
     expect(instance.password).toBe('new pwd');
   }));
+
+
+  it('should be required for username and password', () => {
+    fixture = createGenericTestComponent(`
+      <app-login></app-login>
+    `, TestComponent);
+    component = fixture.componentInstance;
+
+    const userNameInput = getUsernameInput(fixture);
+    expect(userNameInput.nativeElement.getAttribute('required')).not.toBeNull();
+
+    const passwordInput = getPasswordInput(fixture);
+    expect(passwordInput.nativeElement.getAttribute('required')).not.toBeNull();
+  });
+
 });

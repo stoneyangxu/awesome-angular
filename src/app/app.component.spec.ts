@@ -3,6 +3,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { LoginComponent } from 'app/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from 'app/core/auth/auth.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,6 +13,9 @@ describe('AppComponent', () => {
         AppComponent,
         LoginComponent
       ],
+      providers: [
+        AuthService
+      ]
     }).compileComponents();
   }));
 
