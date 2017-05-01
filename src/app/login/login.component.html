@@ -1,9 +1,28 @@
 <div class="form-group">
   <label>Username</label>
-  <input required name="username" [(ngModel)]="username" class="form-control" type="text" />
+  <input
+    #usernameRef="ngModel"
+    required
+    name="username"
+    [(ngModel)]="username"
+    class="form-control"
+    type="text"
+    placeholder="Please enter username."
+  />
+  <i *ngIf="usernameRef.errors?.required">Username is required.</i>
 </div>
 <div class="form-group">
   <label>Password</label>
-  <input required name="password" [(ngModel)]="password" class="form-control" type="password" />
+  <input
+    #passwordRef="ngModel"
+    required
+    name="password"
+    [(ngModel)]="password"
+    class="form-control"
+    type="password"
+    placeholder="Please enter password."
+  />
+  <i *ngIf="passwordRef.errors?.required">Password is required.</i>
 </div>
-  <button class="btn btn-default" (click)="onClick()">Login</button>
+<button class="btn btn-default" (click)="onClick()">Login</button>
+
