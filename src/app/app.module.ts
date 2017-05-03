@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthService } from 'app/core/auth/auth.service';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { TodoComponent } from './todo/todo.component';
+import { TodoService } from 'app/todo/todo.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { TodoComponent } from './todo/todo.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
